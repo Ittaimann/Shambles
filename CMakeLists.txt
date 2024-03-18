@@ -17,6 +17,10 @@ else()
 endif()
 
 
+set(SHAMBLES_INCLUDES Src/Game)
+
+add_subdirectory(Src/Game)
+
 add_library(Shambles Src/main.cpp)
-target_link_libraries(Shambles Balagan)
-target_include_directories(Shambles PUBLIC ${BALAGAN_INCLUDES})
+target_link_libraries(Shambles Balagan Game)
+target_include_directories(Shambles PUBLIC ${SHAMBLES_INCLUDES} ${BALAGAN_INCLUDES})
