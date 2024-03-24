@@ -6,6 +6,8 @@ class BAL2D;
 } // namespace BAL
 namespace SHAM
 {
+class GameState;
+
 class Game
 {
 public:
@@ -16,6 +18,8 @@ public:
 	bool endGame();
 
 private:
+	void GameLoop();
+	GameState* m_gameState;
 	BAL::Window* m_window;
 	BAL::BAL2D* m_renderer;
 };
